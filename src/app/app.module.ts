@@ -1,17 +1,18 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule }    from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 
-import { AppComponent }  from './app.component';
-import { routing }        from './app.routing';
+import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
 import { BarrierComponent } from './barrier';
 import { LightComponent } from './light';
 import { DashboardComponent } from './dashboard';
@@ -27,6 +28,7 @@ import { DashboardComponent } from './dashboard';
         AppComponent,
         HomeComponent,
         LoginComponent,
+        RegisterComponent,
         BarrierComponent,
         LightComponent,
         DashboardComponent
