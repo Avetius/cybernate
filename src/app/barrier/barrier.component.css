@@ -1,0 +1,16 @@
+.barrierWrapper {
+    /* border: 1px solid black; */
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px
+}
+
+li {
+    float: left;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 5px;
+}

@@ -1,0 +1,11 @@
+<h1>Dashes</h1>
+<p>Your all controllers</p>
+<div>
+    <ul>
+        <li *ngFor="let light of lights[0]">{{light.id}} {{light.name}}</li> <!--  todo add barriers -->
+        <li *ngFor="let barrier of barriers[0]">{{barrier.id}} {{barrier.name}}</li> <!-- todo add barriers --> 
+    </ul>
+</div>
+<p><a [routerLink]="['/dashboard']">Dashboard</a></p>
+
+<p><a [routerLink]="['/login']">Logout</a></p>

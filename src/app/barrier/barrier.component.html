@@ -1,0 +1,25 @@
+<h1>Barrier</h1>
+<p>You're barrier controllers</p>
+<div *ngIf="barriers">
+    Barrier from secure api end point:
+    <ul>
+        <li *ngFor="let barrier of barriers[0]">
+            <div class="barrierWrapper">
+                <p>{{barrier.name}}</p>
+                <div *ngIf="barrier.switchType == 1">
+                    <button class="barrierToggleButton" >Toggle state</button>
+                </div>
+                <div *ngIf="barrier.switchType == 0">
+                        <button class="barrierOpenButton" >Open</button>
+                        <button class="barrierCloseButton" >Close</button>
+                </div>
+                <p>{{barrier.state}}</p>
+                <p>{{barrier.online}}</p>
+                <p>{{barrier.switchType}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<p><a [routerLink]="['/dashboard']">Dashboard</a></p>
+<br>
+<p><a [routerLink]="['/login']">Logout</a></p>

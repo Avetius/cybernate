@@ -1,0 +1,9 @@
+<h1>Light</h1>
+<p>You're light controllers</p>
+<div>
+    Light from secure api end point:
+    <ul>
+        <li *ngFor="let light of lights[0]">{{light.id}} {{light.name}}</li> // todo add barriers  
+    </ul>
+</div>
+<p><a [routerLink]="['/login']">Logout</a></p>
