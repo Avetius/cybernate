@@ -13,6 +13,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { ProfileComponent } from './profile';
 import { BarrierComponent } from './barrier';
 import { LightComponent } from './light';
 import { DashboardComponent } from './dashboard';
@@ -29,6 +30,7 @@ import { DashboardComponent } from './dashboard';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        ProfileComponent,
         BarrierComponent,
         LightComponent,
         DashboardComponent

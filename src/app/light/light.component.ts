@@ -11,8 +11,8 @@ export class LightComponent implements OnInit {
     constructor(private lightService: LightService) {}
 
     ngOnInit() {
-        this.lightService.getAll().pipe(first()).subscribe(lights => { 
-            this.lights = lights; 
+        this.lightService.getAll().pipe(first()).subscribe(lights => {
+            this.lights = lights;
         });
     }
 }

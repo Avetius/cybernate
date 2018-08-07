@@ -22,14 +22,14 @@ export class HomeComponent implements OnInit {
         private lightService: LightService,
     ) {}
     ngOnInit() {
-        this.userService.getAll().pipe(first()).subscribe(users => { 
-            this.users = users; 
+        this.userService.getAll().pipe(first()).subscribe(users => {
+            this.users = users;
         });
-        this.barrierService.getAll().pipe(first()).subscribe(barriers => { 
-            this.barriers = barriers; 
+        this.barrierService.getAll().pipe(first()).subscribe(barriers => {
+            this.barriers = barriers;
         });
-        this.lightService.getAll().pipe(first()).subscribe(lights => { 
-            this.lights = lights; 
+        this.lightService.getAll().pipe(first()).subscribe(lights => {
+            this.lights = lights;
         });
     }
 }
