@@ -279,7 +279,7 @@
           </div>
         </div>
         <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
+        <form [formGroup]="sidebarForm" (ngSubmit)="onSubmit()" class="sidebar-form">
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
@@ -613,7 +613,7 @@
                       to Charlie Sheen fans.
                     </p>
   
-                    <form class="form-horizontal">
+                    <form [formGroup]="formHorizontal" (ngSubmit)="onSubmit()" class="form-horizontal">
                       <div class="form-group margin-bottom-none">
                         <div class="col-sm-9">
                           <input class="form-control input-sm" placeholder="Response">
@@ -774,7 +774,7 @@
                 <!-- /.tab-pane -->
   
                 <div class="tab-pane" id="settings">
-                  <form class="form-horizontal">
+                  <form [formGroup]="formHorizontal" (ngSubmit)="onSubmit()" class="form-horizontal">
                     <div class="form-group">
                       <label for="inputName" class="col-sm-2 control-label">Name</label>
   
@@ -968,7 +968,7 @@
         <!-- /.tab-pane -->
         <!-- Settings tab content -->
         <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
+          <form [formGroup]="tabPane" (ngSubmit)="onSubmit()" >
             <h3 class="control-sidebar-heading">General Settings</h3>
   
             <div class="form-group">
