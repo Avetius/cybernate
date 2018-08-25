@@ -2,29 +2,29 @@
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { BarrierType, BarrierState } from '../_models/barrier'
-import { LightState } from '../_models/light'
+import { BarrierType, BarrierState } from '../_models/barrier';
+import { LightState } from '../_models/light';
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
 
     constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let testUser = [{ id: 1,
-            username: 'Avet', 
-            password: '123', 
-            firstName: 'Avet', 
-            lastName: 'Sargsyan' 
+        const testUser = [{ id: 1,
+            username: 'Avet',
+            password: '123',
+            firstName: 'Avet',
+            lastName: 'Sargsyan'
         },
-        {   
+        {
             id: 2,
-            username: 'Sirius', 
-            password: '123', 
-            firstName: 'Sirius', 
-            lastName: 'Siriusyan' 
+            username: 'Sirius',
+            password: '123',
+            firstName: 'Sirius',
+            lastName: 'Siriusyan'
         }];
-        let testBarrier = [{ id: 1, 
-            name: 'Vardanants', 
+        const testBarrier = [{ id: 1,
+            name: 'Vardanants',
             address: 'Vardanants',
             state: BarrierState.UNKNOWN,
             online: true,
@@ -33,8 +33,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             latitude: '44.518365',
             altitude: '3',
         },
-        {   id: 2, 
-            name: 'Hanrapetutyan', 
+        {   id: 2,
+            name: 'Hanrapetutyan',
             address: 'Hanrapetutyan',
             state: BarrierState.UNKNOWN,
             online: true,
@@ -43,19 +43,19 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             latitude: 44.518363,
             altitude: 3,
         }];
-        let testLight = [{ id: 1, 
+        const testLight = [{ id: 1,
             name: 'padyezd',
             state: LightState.UNKNOWN,
             longitude: '40.176860',
             latitude: '44.518365',
             altitude: '3',
         },
-        {   id: 2, 
+        {   id: 2,
             name: 'hayat',
             state: LightState.UNKNOWN,
             longitude: '40.176861',
             latitude: '44.518366',
-            altitude: '3', 
+            altitude: '3',
         }];
 
         // wrap in delayed observable to simulate server api call
@@ -74,7 +74,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // get users
             if (request.url.endsWith('/api/users') && request.method === 'GET') {
-                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                // check for fake auth token in header and return users if valid
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
                     return of(new HttpResponse({ status: 200, body: [testUser] }));
                 } else {
@@ -85,7 +85,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // get barriers
             if (request.url.endsWith('/api/barriers') && request.method === 'GET') {
-                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                // check for fake auth token in header and return users if valid
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
                     return of(new HttpResponse({ status: 200, body: [testBarrier] }));
                 } else {
@@ -93,10 +93,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return throwError({ error: { message: 'Unauthorised' } });
                 }
             }
-           
+
             // get lights
             if (request.url.endsWith('/api/lights') && request.method === 'GET') {
-                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                // check for fake auth token in header and return users if valid
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
                     return of(new HttpResponse({ status: 200, body: [testLight] }));
                 } else {
@@ -109,7 +109,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             return next.handle(request);
         }))
 
-        // call materialize and dematerialize to ensure delay even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648)
+        // call materialize and dematerialize to ensure delay even if an error is thrown
+        // (https://github.com/Reactive-Extensions/RxJS/issues/648)
         .pipe(materialize())
         .pipe(delay(500))
         .pipe(dematerialize());

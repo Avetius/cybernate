@@ -7,11 +7,13 @@ import { LightModel } from '../_models';
 import { UserService } from '../_services';
 import { BarrierService } from '../_services';
 import { LightService } from '../_services';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
+    public sidebarForm: FormGroup;
     users: UserModel[] = [];
     barriers: BarrierModel[] = [];
     lights: LightModel[] = [];

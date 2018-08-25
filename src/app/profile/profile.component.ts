@@ -9,7 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class ProfileComponent implements OnInit {
-    public profileForm: FormGroup;
+    public sidebarForm: FormGroup;
+    public sidebarHeadingForm: FormGroup;
+    public emailForm: FormGroup;
     public users: UserModel[] = [];
     public loading = false;
     public submitted = false;
@@ -22,9 +24,19 @@ export class ProfileComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.profileForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
+        this.sidebarForm = this.formBuilder.group({
+            q: ['', Validators.required],
+            submit: ['', Validators.required]
+        });
+
+        this.sidebarHeadingForm = this.formBuilder.group({
+            q: ['', Validators.required],
+            submit: ['', Validators.required]
+        });
+
+        this.emailForm = this.formBuilder.group({
+            emailto: ['', Validators.required],
+            subject: ['', Validators.required]
         });
 
         this.userService.getAll().pipe(first()).subscribe(users => {
