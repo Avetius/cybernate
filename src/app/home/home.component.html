@@ -279,9 +279,9 @@
           </div>
         </div>
         <!-- search form -->
-        <form [formGroup]="sidebarForm" action="#" method="get" class="sidebar-form">
+        <form [formGroup]="sidebarForm" action="#" method="get" > <!-- class="sidebar-form" -->
           <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <input type="text" formControlName="search" class="form-control" placeholder="Search...">
             <span class="input-group-btn">
                   <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                   </button>
@@ -788,7 +788,7 @@
                     <input type="text" class="form-control" name="subject" placeholder="Subject">
                   </div>
                   <div>
-                    <textarea class="textarea" placeholder="Message"
+                    <textarea class="textarea" placeholder="Message" name="message"
                               style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                   </div>
                 </form>
@@ -1113,13 +1113,13 @@
         <!-- /.tab-pane -->
         <!-- Settings tab content -->
         <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form [formGroup]="sidebarHeading" method="post">
+          <form [formGroup]="sidebarHeadingForm" method="post">
             <h3 class="control-sidebar-heading">General Settings</h3>
   
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Report panel usage
-                <input type="checkbox" class="pull-right" checked>
+                <input type="checkbox" name="reportPanelUsage" class="pull-right" checked>
               </label>
   
               <p>
@@ -1131,7 +1131,7 @@
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Allow mail redirect
-                <input type="checkbox" class="pull-right" checked>
+                <input type="checkbox" name="allowMailRedirect" class="pull-right" checked>
               </label>
   
               <p>
@@ -1143,7 +1143,7 @@
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Expose author name in posts
-                <input type="checkbox" class="pull-right" checked>
+                <input type="checkbox" name="exposeAuthorNameInPOsts" class="pull-right" checked>
               </label>
   
               <p>
@@ -1157,7 +1157,7 @@
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Show me as online
-                <input type="checkbox" class="pull-right" checked>
+                <input type="checkbox" name="showMeAsOnline" class="pull-right" checked>
               </label>
             </div>
             <!-- /.form-group -->
@@ -1165,7 +1165,7 @@
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Turn off notifications
-                <input type="checkbox" class="pull-right">
+                <input type="checkbox" name="turnOffNotifications" class="pull-right">
               </label>
             </div>
             <!-- /.form-group -->

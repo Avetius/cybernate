@@ -11,19 +11,19 @@ export class LightService {
         return this.http.get<LightModel[]>(`/api/lights`);
     }
 
-    get(id:number) {
+    get(id: number) {
         return this.http.get<LightModel>(`/api/light/${id}`);
     }
 
-    create(body:LightModel) {
-        return this.http.post<LightModel>(`/api/light`,body);
+    create(body: LightModel) {
+        return this.http.post<LightModel>(`/api/light`, body);
     }
 
-    update(id:number, body:LightModel) {
-        return this.http.post<LightModel>(`/api/light/${id}`,body);
+    update(id: number, body: LightModel) {
+        return this.http.post<LightModel>(`/api/light/${id}`, body);
     }
 
-    delete(id:number) {
+    delete(id: number) {
         return this.http.delete<LightModel>(`/api/light/${id}`);
     }
 }

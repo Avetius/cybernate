@@ -10,8 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class ProfileComponent implements OnInit {
     public sidebarForm: FormGroup;
-    public sidebarHeadingForm: FormGroup;
-    public emailForm: FormGroup;
+    public formHorizontal: FormGroup;
+    public formHorizontal2: FormGroup;
+    public tabPane: FormGroup;
+    // public emailForm: FormGroup;
     public users: UserModel[] = [];
     public loading = false;
     public submitted = false;
@@ -19,28 +21,54 @@ export class ProfileComponent implements OnInit {
     public error = '';
 
     constructor(
-        private userService: UserService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private userService: UserService
     ) {}
 
     ngOnInit() {
         this.sidebarForm = this.formBuilder.group({
-            q: ['', Validators.required],
+            search: ['', Validators.required]
+        });
+
+        this.formHorizontal = this.formBuilder.group({
+            response: ['', Validators.required],
             submit: ['', Validators.required]
         });
 
-        this.sidebarHeadingForm = this.formBuilder.group({
-            q: ['', Validators.required],
+        this.formHorizontal2 = this.formBuilder.group({
+            name: ['', Validators.required],
+            email: ['', Validators.required],
             submit: ['', Validators.required]
         });
 
-        this.emailForm = this.formBuilder.group({
-            emailto: ['', Validators.required],
-            subject: ['', Validators.required]
+        this.tabPane = this.formBuilder.group({
+            checkbox1: ['', Validators.required],
+            checkbox2: ['', Validators.required],
+            checkbox3: ['', Validators.required],
+            checkbox4: ['', Validators.required]
         });
+
+        // this.emailForm = this.formBuilder.group({
+        //     emailto: ['', Validators.required],
+        //     subject: ['', Validators.required]
+        // });
 
         this.userService.getAll().pipe(first()).subscribe(users => {
             this.users = users;
         });
+    }
+
+    // convenience getter for easy access to form fields
+    get f() { return this.sidebarForm.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.sidebarForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
     }
 }
