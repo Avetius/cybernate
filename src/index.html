@@ -3,44 +3,88 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cybernate</title>
-	<base href="/">
-
+  
 	<!-- bootstrap css -->
 	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MaterialAdminLTE 2 | Log in</title>
 	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" rel="stylesheet" type="text/css" >
+
+  <base href="/">
 	<!-- Bootstrap 3.3.7 -->
 	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<!-- Font Awesome -->       
-	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
 	<!-- Ionicons -->     
-	<link rel="stylesheet" type="text/css" href="bower_components/Ionicons/css/ionicons.min.css">
-	<!-- Theme style -->       
-	<link rel="stylesheet" type="text/css" href="src/assets/css/AdminLTE.min.css">
-	<!-- Material Design -->
-	<link rel="stylesheet" type="text/css" href="src/assets/css/bootstrap-material-design.min.css">
-	<link rel="stylesheet" type="text/css" href="src/assets/css/ripples.min.css">
-	<link rel="stylesheet" type="text/css" href="src/assets/css/MaterialAdminLTE.min.css">
- <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" type="text/css" href="src/assets/css/skins/all-md-skins.min.css">
-	<!-- Morris chart -->
-	<link rel="stylesheet" type="text/css" href="bower_components/morris.js/morris.css">
+	<link href="bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css" >       
+  <!-- Morris chart -->
+	<link href="bower_components/morris.js/morris.css" rel="stylesheet" type="text/css" >
 	<!-- jvectormap -->
-	<link rel="stylesheet" type="text/css" href="bower_components/jvectormap/jquery-jvectormap.css">
+	<link href="bower_components/jvectormap/jquery-jvectormap.css" rel="stylesheet" type="text/css" >
 	<!-- Date Picker -->
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" >
 	<!-- Daterange picker -->
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-	   
-	<!-- Google Font -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-	<style>
-	    a { cursor: pointer }
-	</style>
+	<link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" >
+  <!-- Theme style -->
+  <link href="src/assets/css/AdminLTE.min.css" rel="stylesheet" type="text/css" >
+	<!-- Material Design -->
+	<link href="src/assets/css/bootstrap-material-design.min.css" rel="stylesheet" type="text/css" >
+	<link href="src/assets/css/ripples.min.css" rel="stylesheet" type="text/css" >
+	<link href="src/assets/css/MaterialAdminLTE.min.css" rel="stylesheet" type="text/css" >
+ <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+	<link href="src/assets/css/skins/all-md-skins.min.css" rel="stylesheet" type="text/css" >
+
+  <style> a { cursor: pointer } </style>
+  
 </head>
 <body>
-    <app>Loading...</app>
+	<app>Loading...</app>
+	
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Material Design -->
+  <script src="assets/js/material.min.js"></script>
+  <script src="assets/js/ripples.min.js"></script>
+  <script>
+      $.material.init();
+  </script>
+  
+  <!-- Sparkline -->
+  <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+  <!-- jvectormap -->
+  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- Bootstrap WYSIHTML5 -->
+  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <!-- Slimscroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="assets/js/adminlte.min.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- <script src="assets/js/pages/dashboard.js"></script> -->
+  <!-- AdminLTE for demo purposes -->
+  <script src="assets/js/demo.js"></script>
+  <!-- Morris.js charts -->
+  <!-- <script src="bower_components/raphael/raphael.min.js"></script>
+  <script src="bower_components/morris.js/morris.min.js"></script> -->
 </body>
 </html>

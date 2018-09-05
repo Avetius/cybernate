@@ -1,5 +1,5 @@
 <div class="wrapper">
-
+  <div class="profile-box">
     <header class="main-header">
       <!-- Logo -->
       <!-- <a href="../../index2.html" class="logo"> -->
@@ -279,7 +279,7 @@
           </div>
         </div>
         <!-- search form -->
-        <form [formGroup]="sidebarForm" (ngSubmit)="onSubmit()"> <!-- class="sidebar-form" -->
+        <form [formGroup]="sidebarForm" (ngSubmit)="onSubmit()" class="sidebar-form"> <!--  -->
           <div class="input-group">
             <input type="text" name="search" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
@@ -1042,20 +1042,4 @@
     <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
-  
-  <!-- jQuery 3 -->
-  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- Material Design -->
-  <script src="../../dist/js/material.min.js"></script>
-  <script src="../../dist/js/ripples.min.js"></script>
-  <script>
-      $.material.init();
-  </script>
-  <!-- FastClick -->
-  <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="../../dist/js/demo.js"></script>
+</div>

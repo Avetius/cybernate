@@ -6,6 +6,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     templateUrl: 'profile.component.html',
+    styleUrls: [
+        // '../../../bower_components/bootstrap/dist/css/bootstrap.min.css',
+        // '../../../bower_components/font-awesome/css/font-awesome.min.css',
+        // '../../../bower_components/Ionicons/css/ionicons.min.css',
+        // '../../../bower_components/morris.js/morris.css',
+        // '../../../bower_components/jvectormap/jquery-jvectormap.css',
+        // '../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+        // '../../../bower_components/bootstrap-daterangepicker/daterangepicker.css',
+        // '../../../src/assets/css/AdminLTE.min.css',
+        // '../../../src/assets/css/bootstrap-material-design.min.css',
+        // '../../../src/assets/css/ripples.min.css',
+        // '../../../src/assets/css/MaterialAdminLTE.min.css',
+        // '../../../src/assets/css/skins/all-md-skins.min.css',
+    ],
 })
 
 export class ProfileComponent implements OnInit {
