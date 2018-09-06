@@ -14,8 +14,8 @@ export class BarrierComponent implements OnInit {
     constructor(private barrierService: BarrierService) {}
 
     ngOnInit() {
-        this.barrierService.getAll().pipe(first()).subscribe(barriers => { 
-            this.barriers = barriers; 
+        this.barrierService.getAll().pipe(first()).subscribe(barriers => {
+            this.barriers = barriers;
         });
     }
 }

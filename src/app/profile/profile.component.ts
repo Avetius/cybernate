@@ -6,20 +6,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     templateUrl: 'profile.component.html',
-    styleUrls: [
-        // '../../../bower_components/bootstrap/dist/css/bootstrap.min.css',
-        // '../../../bower_components/font-awesome/css/font-awesome.min.css',
-        // '../../../bower_components/Ionicons/css/ionicons.min.css',
-        // '../../../bower_components/morris.js/morris.css',
-        // '../../../bower_components/jvectormap/jquery-jvectormap.css',
-        // '../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
-        // '../../../bower_components/bootstrap-daterangepicker/daterangepicker.css',
-        // '../../../src/assets/css/AdminLTE.min.css',
-        // '../../../src/assets/css/bootstrap-material-design.min.css',
-        // '../../../src/assets/css/ripples.min.css',
-        // '../../../src/assets/css/MaterialAdminLTE.min.css',
-        // '../../../src/assets/css/skins/all-md-skins.min.css',
-    ],
 })
 
 export class ProfileComponent implements OnInit {
@@ -61,11 +47,6 @@ export class ProfileComponent implements OnInit {
             checkbox3: ['', Validators.required],
             checkbox4: ['', Validators.required]
         });
-
-        // this.emailForm = this.formBuilder.group({
-        //     emailto: ['', Validators.required],
-        //     subject: ['', Validators.required]
-        // });
 
         this.userService.getAll().pipe(first()).subscribe(users => {
             this.users = users;

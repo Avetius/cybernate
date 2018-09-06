@@ -20,17 +20,17 @@ export class DashboardComponent implements OnInit {
         private lightService: LightService,
     ) {}
     ngOnInit() {
-        this.userService.getAll().pipe(first()).subscribe(users => { 
-            this.users = users; 
-            console.log('this.users -> ',this.users);
+        this.userService.getAll().pipe(first()).subscribe(users => {
+            this.users = users;
+            console.log('this.users -> ', this.users);
         });
-        this.barrierService.getAll().pipe(first()).subscribe(barriers => { 
+        this.barrierService.getAll().pipe(first()).subscribe(barriers => {
             this.barriers = barriers;
-            console.log('this.barriers -> ',this.barriers); 
+            console.log('this.barriers -> ', this.barriers);
         });
-        this.lightService.getAll().pipe(first()).subscribe(lights => { 
+        this.lightService.getAll().pipe(first()).subscribe(lights => {
             this.lights = lights;
-            console.log('this.lights -> ',this.lights); 
+            console.log('this.lights -> ', this.lights);
         });
     }
 }

@@ -11,19 +11,19 @@ export class UserService {
         return this.http.get<UserModel[]>('/api/users');
     }
 
-    get(id:number) {
+    get(id: number) {
         return this.http.get<UserModel>(`/api/user/${id}`);
     }
 
-    create(body:UserModel) {
-        return this.http.post<UserModel>(`/api/user`,body);
+    create(body: UserModel) {
+        return this.http.post<UserModel>(`/api/user`, body);
     }
 
-    update(id:number, body:UserModel) {
-        return this.http.post<UserModel>(`/api/user/${id}`,body);
+    update(id: number, body: UserModel) {
+        return this.http.post<UserModel>(`/api/user/${id}`, body);
     }
 
-    delete(id:number) {
+    delete(id: number) {
         return this.http.delete<UserModel>(`/api/user/${id}`);
     }
 }

@@ -11,19 +11,19 @@ export class BarrierService {
         return this.http.get<BarrierModel[]>(`/api/barriers`);
     }
 
-    get(id:number) {
+    get(id: number) {
         return this.http.get<BarrierModel>(`/api/barrier/${id}`);
     }
 
-    create(body:BarrierModel) {
-        return this.http.post<BarrierModel>(`/api/barrier`,body);
+    create(body: BarrierModel) {
+        return this.http.post<BarrierModel>(`/api/barrier`, body);
     }
 
-    update(id:number, body:BarrierModel) {
-        return this.http.post<BarrierModel>(`/api/barrier/${id}`,body);
+    update(id: number, body: BarrierModel) {
+        return this.http.post<BarrierModel>(`/api/barrier/${id}`, body);
     }
 
-    delete(id:number) {
+    delete(id: number) {
         return this.http.delete<BarrierModel>(`/api/barrier/${id}`);
     }
 }
